@@ -28,8 +28,6 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-#PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-#PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 PS1="${debian_chroot:+($debian_chroot)}${GREEN}\$${WHITE} "
 
 # If this is an xterm set the title to user@host:dir
@@ -57,12 +55,14 @@ if ! shopt -oq posix; then
   fi
 fi
 
+export PATH=/usr/local/bin:$PATH
+if [[ -d "$HOME/bin" ]] ; then
+  PATH="$HOME/bin:$PATH"
+fi
+
+export HISTSIZE=1000
+export HISTFILESIZE=${HISTSIZE}
+export HISTCONTROL=ignoreboth
+export HISTIGNORE='&:ls:ll:la:cd:exit:clear:history'
+
 export DISPLAY=localhost:0.0
-
-function dots() {
-  case $1 in
-    install) bash ~/dotfiles/install.sh ;;
-    init) echo 'init' ;;
-  esac
-}
-
