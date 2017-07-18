@@ -1,0 +1,4 @@
+# Input C-X, C-r to enable
+set completion-ignore-case on
+set bell-style none
+
