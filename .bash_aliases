@@ -1,7 +1,12 @@
 alias brc='source ~/.bashrc'
 
 alias ls='ls -lA --color=auto --group-directories-first'
-alias ld='ls -lad --color=auto'
+
+alias cb='xsel --clipboard'
+
+if [ -n $TMUX ]; then
+  alias tmux='tmux attach || tmux new-session \; source-file ~/.tmux/main.layout'
+fi
 
 function jk() {
   case $1 in

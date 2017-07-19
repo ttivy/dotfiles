@@ -1,0 +1,4 @@
+splitw -h #p1
+selectp -L
+splitw -v #p2
+selectp -R

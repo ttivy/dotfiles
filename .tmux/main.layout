@@ -1,0 +1,8 @@
+splitw -v 
+resize-pane -D 20
+selectp -U
+splitw -h
+selectp -L
+splitw -v
+selectp -R
+resize-pane -L 30
