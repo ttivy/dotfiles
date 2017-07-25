@@ -12,8 +12,6 @@ function jk() {
   case $1 in
     install) . ~/dotfiles/scripts/install.sh ;;
     init)    . ~/dotfiles/scripts/init.sh ;;
-
-    src) source ~/.bashrc ;;
-    *) echo 'show help' ;;
+    *) echo 'jk is an utility command for dotfiles' ;;
   esac
 }
