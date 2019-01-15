@@ -12,7 +12,7 @@ do
     [[ "$f" == ".DS_Store" ]] && continue
 
     echo "$f"
-    ln -snf ./"$f" ~/"$f"
+    ln -snf ~/dotfiles/home/"$f" ~/"$f"
 done
 echo 'Finished'
 
