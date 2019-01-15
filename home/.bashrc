@@ -23,7 +23,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-
 # Set bash options
 shopt -s autocd
 shopt -s checkwinsize
@@ -44,12 +43,6 @@ WHITE='\[\033[00m\]'
 PS1="${debian_chroot:+($debian_chroot)}${GREEN}\$${WHITE} "
 
 
-# Include .bash_aliases
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
-
 # Add /usr/local/bin to $PATH
 export PATH=/usr/local/bin:$PATH
 if [[ -d "$HOME/bin" ]] ; then
@@ -63,4 +56,17 @@ export HISTFILESIZE=${HISTSIZE}
 export HISTCONTROL=ignoreboth
 export HISTIGNORE='&:ls:ll:la:cd:exit:clear:history'
 export DISPLAY=localhost:0:0
+export VISUAL='vim'
+export LS_COLORS='di=01;35'
+export XDG_CONFIG_HOME="$HOME/.config"
+
+# Include .bash_aliases
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+# Include .bash_local
+if [ -f ~/.bash_local ]; then
+    . ~/.bash_local
+fi
 

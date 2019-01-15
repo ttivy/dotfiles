@@ -1,0 +1,8 @@
+# colorscheme badwolf
+
+[[plugins]]
+repo = 'sjl/badwolf'
+hook_add = '''
+  set background=dark
+'''
+

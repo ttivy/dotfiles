@@ -6,14 +6,13 @@ cd ~/dotfiles
 git fetch origin master
 git reset --hard origin/master
 # シンボリックリンクを生成
+cd ~/dotfiles/home
 for f in .??*
 do
-    [[ "$f" == ".git" ]] && continue
-    [[ "$f" == ".gitignore" ]] && continue
     [[ "$f" == ".DS_Store" ]] && continue
 
-    ln -snf ./dotfiles/"$f" ~/"$f"
     echo "$f"
+    ln -snf ./"$f" ~/"$f"
 done
 echo 'Finished'
 

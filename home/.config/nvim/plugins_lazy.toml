@@ -1,0 +1,6 @@
+# Lazy plugins
+
+[[plugins]]
+repo  = 'davidhalter/jedi-vim'
+on_ft = 'python'
+

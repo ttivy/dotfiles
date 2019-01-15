@@ -1,4 +1,5 @@
-" setting
+"General settings
+
 "文字コードをUFT-8に設定
 set fenc=utf-8
 " バックアップファイルを作らない
@@ -11,6 +12,8 @@ set autoread
 set hidden
 " 入力中のコマンドをステータスに表示する
 set showcmd
+" バックスペースが効かないので
+set backspace=indent,eol,start
 
 
 " 見た目系
@@ -19,7 +22,7 @@ set number
 " 現在の行を強調表示
 set cursorline
 " 現在の行を強調表示縦
-set cursorcolumn
+"set cursorcolumn
 " 行末の1文字先までカーソルを移動できるように
 set virtualedit=onemore
 " インデントはスマートインデント
@@ -43,10 +46,11 @@ set list listchars=tab:\\-
 " Tab文字を半角スペースにする
 set expandtab
 " 行頭以外のTab文字の表示幅スペースいくつ分
-set tabstop=2
+set tabstop=4
 " 行頭でのTab文字の表示幅
-set shiftwidth=2
-
+set shiftwidth=4
+" Tabのスペース変換をtabstopに合わせる
+set softtabstop=0
 
 " 検索系
 " 検索文字列が小文字の場合は大文字小文字を区別なく検索する
@@ -63,6 +67,5 @@ set hlsearch
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 colorscheme desert
-
-syntax on
+"syntax on
 
